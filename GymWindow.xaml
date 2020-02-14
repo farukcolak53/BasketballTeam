@@ -1,0 +1,74 @@
+﻿<Window x:Class="CSE3055.GymWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="GymWindow" Height="450" Width="800">
+    <Grid Name="grd1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF3A2828" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="217"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Grid.Column="0">
+
+            <TextBox x:Name="txtAra" HorizontalAlignment="Left" Height="23" 
+        		TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged" Margin="5,5,0,0"/>
+
+            <ListBox x:Name="listGyms" SelectionChanged="listGyms_SelectionChanged" Height="380" Margin="5,5,10,0" >
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF4E989B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding GymID}"/>
+                            <TextBlock Text="{Binding GymName}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="111.2,38,0,0" TextWrapping="Wrap" Text="Gym ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91.2,66,0,0" TextWrapping="Wrap" Text="Gym Name" VerticalAlignment="Top" RenderTransformOrigin="5.066,-6.5"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="116.2,94,0,0" TextWrapping="Wrap" Text="City ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="56.2,204,0,0" TextWrapping="Wrap" Text="Construction Date" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="93.2,122,0,0" TextWrapping="Wrap" Text="Gym Street" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="87.2,150,0,0" TextWrapping="Wrap" Text="Gym District" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="106.2,179,0,0" TextWrapping="Wrap" Text="Capacity" VerticalAlignment="Top"/>
+
+        <TextBox Name="txtGymID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,31,0,0" 
+                 TextWrapping="Wrap" Text="{Binding GymID}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtGymName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,60,0,0" 
+                 TextWrapping="Wrap" Text="{Binding GymName}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtCityID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,87,0,0" 
+                 TextWrapping="Wrap" Text="{Binding CityID}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtGymStreet" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,115,0,0" 
+                 TextWrapping="Wrap" Text="{Binding GymStreet}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtGymDistrict" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,143,0,0" 
+                 TextWrapping="Wrap" Text="{Binding GymDistrict}" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtCapacity" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,172,0,0" 
+                TextWrapping="Wrap" Text="{Binding Capacity}" VerticalAlignment="Top" Width="52"/>
+
+        <DatePicker Name="dp1" Grid.Column="1" HorizontalAlignment="Left" Margin="181.2,200,0,0" 
+                    VerticalAlignment="Top" Width="186" SelectedDate="{Binding ConstructionDate}"/>
+
+        <Button Content="INSERT" Grid.Column="1" HorizontalAlignment="Left" Margin="260.2,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="181.2,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Margin="260.2,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="LIST" Grid.Column="1" HorizontalAlignment="Left" Margin="181.2,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="GO BACK" Grid.Column="1" HorizontalAlignment="Left" Margin="464.2,329,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5" Background="Black" Foreground="White" BorderBrush="White"/>
+    </Grid>
+</Window>

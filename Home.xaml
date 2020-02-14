@@ -1,0 +1,28 @@
+﻿<Window x:Class="CSE3055.Windows.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055.Windows"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="136*"/>
+            <ColumnDefinition Width="261*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="C:\Users\faruk\source\repos\CSE3055\Images\Home_background.jpg"  Opacity="0.9" Grid.ColumnSpan="2" Margin="0,0,-0.4,0"/>
+        <Button Content="TEAM" HorizontalAlignment="Left" Margin="97.1,66,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Team_Clicked"/>
+        <Button Content="PLAYER" HorizontalAlignment="Left" Margin="273.1,66,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Click="Player_Clicked" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170.1,10,0,0" TextWrapping="Wrap" Text="CONTENTS" VerticalAlignment="Top" Foreground="White" Height="34" Width="133" FontSize="24" RenderTransformOrigin="0.593,-0.078" Grid.Column="1"/>
+        <Button Content="CITY" HorizontalAlignment="Left" Margin="97.1,136,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="City_Clicked"/>
+        <Button Content="GYM" HorizontalAlignment="Left" Margin="273.1,136,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Gym_Clicked"/>
+        <Button Content="STAFF" HorizontalAlignment="Left" Margin="97.1,206,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Staff_Clicked"/>
+        <Button Content="COMPETITION" HorizontalAlignment="Left" Margin="273.1,204,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Button_Click"/>
+        <Button Content="SPONSOR" HorizontalAlignment="Left" Margin="97.1,276,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Sponsor_Clicked"/>
+        <Button Content="BASKETBALL MATCH" HorizontalAlignment="Left" Margin="273.1,276,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Match_Clicked"/>
+        <Button Content="MATCH STATISTIC" HorizontalAlignment="Left" Margin="97.1,346,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.382,0.883" BorderBrush="White" Background="#FFED2727" FontFamily="Impact" Grid.Column="1" Click="Stats_Clicked"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="165,346,0,0" VerticalAlignment="Top" Width="75" Background="#FFFCF63C" BorderBrush="White" FontFamily="Impact" Click="Logout_Click"/>
+
+    </Grid>
+</Window>

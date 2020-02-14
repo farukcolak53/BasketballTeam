@@ -1,0 +1,72 @@
+﻿<Window x:Class="CSE3055.StaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="StaffWindow" Height="450" Width="800">
+    <Grid Name="grd1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF3A2828" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="217"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Grid.Column="0">
+
+            <TextBox x:Name="txtAra" HorizontalAlignment="Left" Height="23" 
+        		TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged" Margin="5,5,0,0"/>
+
+            <ListBox x:Name="listStaff" SelectionChanged="listStaff_SelectionChanged" Height="380" Margin="5,5,10,0" >
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF4E989B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding StaffID}"/>
+                            <TextBlock Text="{Binding StaffName}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="111.2,83,0,0" TextWrapping="Wrap" Text="Staff ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91.2,111,0,0" TextWrapping="Wrap" Text="Staff Name" VerticalAlignment="Top" RenderTransformOrigin="5.066,-6.5"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="69.2,139,0,0" TextWrapping="Wrap" Text="Staff Birth Date" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="118.2,195,0,0" TextWrapping="Wrap" Text="Salary" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="67.2,223,0,0" TextWrapping="Wrap" Text="Contract Period" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="106.2,167,0,0" TextWrapping="Wrap" Text="Team ID" VerticalAlignment="Top"/>
+
+        <TextBox Name="txtStaffID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,76,0,0" 
+                 TextWrapping="Wrap" Text="{Binding StaffID}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtStaffName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,104,0,0" 
+                 TextWrapping="Wrap" Text="{Binding StaffName}" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtStaffBirthDate" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,132,0,0" 
+            TextWrapping="Wrap" Text="{Binding StaffBirthDate}" VerticalAlignment="Top" Width="86"/>
+        <TextBox Name="txtTeamID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,160,0,0" 
+                 TextWrapping="Wrap" Text="{Binding TeamID}" VerticalAlignment="Top" Width="86"/>
+        <TextBox x:Name="txtSalary" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,188,0,0" 
+            TextWrapping="Wrap" Text="{Binding Salary}" VerticalAlignment="Top" Width="86"/>
+        <TextBox x:Name="txtContractPeriod" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,216,0,0" 
+            TextWrapping="Wrap" Text="{Binding ContractPeriod}" VerticalAlignment="Top" Width="86"/>
+
+        <Button Content="INSERT" Grid.Column="1" HorizontalAlignment="Left" Margin="271.2,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="191.2,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Margin="271.2,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="LIST" Grid.Column="1" HorizontalAlignment="Left" Margin="192.2,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="GO BACK" Grid.Column="1" HorizontalAlignment="Left" Margin="464.2,329,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5" Background="Black" Foreground="White" BorderBrush="White"/>
+        
+
+    </Grid>
+</Window>

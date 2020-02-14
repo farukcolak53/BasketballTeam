@@ -1,0 +1,104 @@
+﻿<Window x:Class="CSE3055.MatchStatisticWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="MatchStatisticWindow" Height="450" Width="800">
+    <Grid Name="grd1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF3A2828" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="217"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Grid.Column="0">
+
+            <TextBox x:Name="txtAra" HorizontalAlignment="Left" Height="23" 
+        		TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged" Margin="5,5,0,0"/>
+
+            <ListBox x:Name="listMatchStats" SelectionChanged="listMatchStats_SelectionChanged" Height="380" Margin="5,5,10,0" >
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF4E989B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding HomeTeamName}"/>
+                            <TextBlock Text=" - "/>
+                            <TextBlock Text="{Binding AwayTeamName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91.2,38,0,0" TextWrapping="Wrap" Text="Match ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="71.2,67,0,0" TextWrapping="Wrap" Text="Match Stat ID" VerticalAlignment="Top" RenderTransformOrigin="5.066,-6.5"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="227.2,127,0,0" TextWrapping="Wrap" Text="Points" VerticalAlignment="Top"/>
+
+        <TextBox Name="txtMatchID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,31,0,0" 
+                 TextWrapping="Wrap" Text="{Binding MatchID}" VerticalAlignment="Top" Width="60"/>
+        <TextBox Name="txtMatchStatID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,60,0,0" 
+                 TextWrapping="Wrap" Text="{Binding MatchStatisticID}" VerticalAlignment="Top" Width="60"/>
+        <TextBox Name="txtHomeTeamName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="71.2,92,0,0" 
+                 TextWrapping="Wrap" Text="{Binding HomeTeamName}" VerticalAlignment="Top" Width="170"/>
+        <TextBox Name="txtAwayTeamName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="246.2,92,0,0" 
+                 TextWrapping="Wrap" Text="{Binding AwayTeamName}" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtHPoints" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,120,0,0" 
+                TextWrapping="Wrap" Text="{Binding HomeTeamPoints}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAPoints" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,120,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamPoints}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtHRebounds" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,148,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeamRebounds}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtHAssists" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,176,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeamAssists}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtHTurnovers" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,204,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeamTurnovers}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtHFG" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,232,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeamFG}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtH3P" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,260,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeam3P}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtH2P" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,288,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeam2P}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtHFP" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="136.2,316,0,0" 
+            TextWrapping="Wrap" Text="{Binding HomeTeamFP}" VerticalAlignment="Top" Width="70"/>
+
+        <TextBox x:Name="txtARebounds" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,148,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamRebounds}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAAssists" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,176,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamAssists}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtATurnovers" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,204,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamTurnovers}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAFG" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,232,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamFG}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtA3P" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,260,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeam3P}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtA2P" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,288,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeam2P}" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAFP" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="281.2,316,0,0" 
+            TextWrapping="Wrap" Text="{Binding AwayTeamFP}" VerticalAlignment="Top" Width="70"/>
+
+        <Button Content="INSERT" Grid.Column="1" HorizontalAlignment="Left" Margin="246.2,355,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="166.2,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Margin="246.2,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="LIST" Grid.Column="1" HorizontalAlignment="Left" Margin="166.2,355,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="GO BACK" Grid.Column="1" HorizontalAlignment="Left" Margin="460.2,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5" Background="Black" Foreground="White" BorderBrush="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="218,155,0,0" TextWrapping="Wrap" Text="Rebounds" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="224.2,183,0,0" TextWrapping="Wrap" Text="Assists" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="218.2,211,0,0" TextWrapping="Wrap" Text="Turnovers" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="239.2,239,0,0" TextWrapping="Wrap" Text="FG" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="239.2,267,0,0" TextWrapping="Wrap" Text="3P" VerticalAlignment="Top" RenderTransformOrigin="0.541,1.827"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="239.2,295,0,0" TextWrapping="Wrap" Text="2P" VerticalAlignment="Top" RenderTransformOrigin="0.541,1.827"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="239.2,323,0,0" TextWrapping="Wrap" Text="FP" VerticalAlignment="Top" RenderTransformOrigin="0.541,1.827"/>
+
+    </Grid>
+</Window>

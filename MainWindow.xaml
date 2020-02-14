@@ -1,0 +1,28 @@
+﻿<Window x:Class="CSE3055.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <Image Source="C:\Users\faruk\source\repos\CSE3055\Images\Background.png" Opacity="0.8"/>
+        <!--Button as a Link button using style-->
+        <!--end Button as a Link button using style-->
+        <Grid Margin="62,0,480.6,187" Background="White" Height="149" VerticalAlignment="Bottom" Opacity="0.8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="252*" />
+                <!--   <RowDefinition Height="12*" />-->
+            </Grid.RowDefinitions>
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlockUsername" Text="Username:" VerticalAlignment="Top" Width="110" FontSize="12" FontFamily="Impact"/>
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,38,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110" FontFamily="Impact"  />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="102,10,0,0" Name="textBoxUsername" VerticalAlignment="Top" Width="133" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="102,38,0,0" Name="passwordBox" VerticalAlignment="Top" Width="133" />
+            <!--For password-->
+            <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="135,76,0,0" Name="loginButton" VerticalAlignment="Top" Width="70" Click="Submit_Click" RenderTransformOrigin="0.483,-2.313" Background="#FFF10D0D" BorderBrush="Black" Foreground="Black" FontFamily="Impact"  />
+            <Button Content="Register" Height="23" HorizontalAlignment="Left" Margin="135,116,0,0" x:Name="loginButton_Copy" VerticalAlignment="Top" Width="70" Click="Register_Click" RenderTransformOrigin="0.483,-2.313" Background="#FF423DFF" BorderBrush="Black" Foreground="Black" FontFamily="Impact"  />
+        </Grid>
+    </Grid>
+</Window>

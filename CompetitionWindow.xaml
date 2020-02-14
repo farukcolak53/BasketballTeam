@@ -1,0 +1,68 @@
+﻿<Window x:Class="CSE3055.CompetitionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="CompetitionWindow" Height="450" Width="800">
+    <Grid Name="grd1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF3A2828" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="217"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Grid.Column="0">
+
+            <TextBox x:Name="txtAra" HorizontalAlignment="Left" Height="23" 
+        		TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged" Margin="5,5,0,0"/>
+
+            <ListBox x:Name="listCompetitions" SelectionChanged="listCompetitions_SelectionChanged" Height="380" Margin="5,5,10,0" >
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF4E989B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding CompetitionID}"/>
+                            <TextBlock Text="{Binding CompetitionName}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91.2,38,0,0" TextWrapping="Wrap" Text="Competition ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="71.2,67,0,0" TextWrapping="Wrap" Text="Competition Name" VerticalAlignment="Top" RenderTransformOrigin="5.066,-6.5"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="146.2,94,0,0" TextWrapping="Wrap" Text="Prize" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="50.2,120,0,0" TextWrapping="Wrap" Text="Number of Participants" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="93.2,150,0,0" TextWrapping="Wrap" Text="Last Champion" VerticalAlignment="Top"/>
+
+        <TextBox Name="txtCompetitionID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,31,0,0" 
+                 TextWrapping="Wrap" Text="{Binding CompetitionID}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtCompetitionName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,60,0,0" 
+                 TextWrapping="Wrap" Text="{Binding CompetitionName}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtPrize" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,87,0,0" 
+                 TextWrapping="Wrap" Text="{Binding Prize}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtNumOfParticipants" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,115,0,0" 
+                 TextWrapping="Wrap" Text="{Binding NumberOfParticipants}" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtLastChampion" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,143,0,0" 
+                TextWrapping="Wrap" Text="{Binding LastChampion}" VerticalAlignment="Top" Width="186"/>
+
+
+        <Button Content="INSERT" Grid.Column="1" HorizontalAlignment="Left" Margin="260.2,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="180.2,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Margin="260.2,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="LIST" Grid.Column="1" HorizontalAlignment="Left" Margin="181.2,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="GO BACK" Grid.Column="1" HorizontalAlignment="Left" Margin="464.2,329,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5" Background="Black" Foreground="White" BorderBrush="White"/>
+
+    </Grid>
+</Window>

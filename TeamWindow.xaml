@@ -1,0 +1,71 @@
+﻿<Window x:Class="CSE3055.TeamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSE3055"
+        mc:Ignorable="d"
+        Title="TeamWindow" Height="450" Width="800">
+    <Grid Name="grd1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FF3A2828" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="217"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Grid.Column="0">
+
+            <TextBox x:Name="txtAra" HorizontalAlignment="Left" Height="23" 
+        		TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged" Margin="5,5,0,0"/>
+
+            <ListBox x:Name="listTeams" SelectionChanged="listTeams_SelectionChanged" Height="380" Margin="5,5,10,0" >
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF4E989B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding TeamID}"/>
+                            <TextBlock Text="{Binding TeamName}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="111.2,38,0,0" TextWrapping="Wrap" Text="Team ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="91.2,66,0,0" TextWrapping="Wrap" Text="Team Name" VerticalAlignment="Top" RenderTransformOrigin="5.066,-6.5"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="84.2,94,0,0" TextWrapping="Wrap" Text="Team Mascot" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="82.2,150,0,0" TextWrapping="Wrap" Text="Second Color" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="118.2,178,0,0" TextWrapping="Wrap" Text="City ID" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="100.2,122,0,0" TextWrapping="Wrap" Text="First Color" VerticalAlignment="Top"/>
+
+        <TextBox Name="txtTeamID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,31,0,0" 
+                 TextWrapping="Wrap" Text="{Binding TeamID}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtTeamName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,60,0,0" 
+                 TextWrapping="Wrap" Text="{Binding TeamName}" VerticalAlignment="Top" Width="186"/>
+        <TextBox Name="txtTeamMascot" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,87,0,0" 
+                 TextWrapping="Wrap" Text="{Binding TeamMascot}" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="txtFirstColor" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,115,0,0" 
+                TextWrapping="Wrap" Text="{Binding FirstColor}" VerticalAlignment="Top" Width="86"/>
+        <TextBox Name="txtSecondColor" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,143,0,0" 
+                 TextWrapping="Wrap" Text="{Binding SecondColor}" VerticalAlignment="Top" Width="86"/>
+        <TextBox Name="txtCityID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181.2,171,0,0" 
+                 TextWrapping="Wrap" Text="{Binding CityID}" VerticalAlignment="Top" Width="40"/>
+
+        <Button Content="INSERT" Grid.Column="1" HorizontalAlignment="Left" Margin="271.2,228,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="191.2,253,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Margin="271.2,253,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="LIST" Grid.Column="1" HorizontalAlignment="Left" Margin="192.2,228,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="GO BACK" Grid.Column="1" HorizontalAlignment="Left" Margin="464.2,329,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5" Background="Black" Foreground="White" BorderBrush="White"/>
+        <Button Content="SPONSORSHIPS" Grid.Column="1" HorizontalAlignment="Left" Margin="191.2,277,0,0" VerticalAlignment="Top" Width="155" Click="Button_Click_6"/>
+
+    </Grid>
+</Window>
